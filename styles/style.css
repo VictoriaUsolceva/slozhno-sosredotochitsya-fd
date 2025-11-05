@@ -1,5 +1,341 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--main-font, sans-serif);
+  background-color: var(--bg-color, rgba(0, 0, 40, 1));
+  color: var(--text-color, #f1b2ce);
+  object-fit: cover;
+  background-image: var(--bg-cover-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: var(--min--spacing);
+  position: relative;
+}
+
+.corners::before {
+  content: "";
+  position: absolute;
+  inline-size: 25.04px;
+  block-size: 25px;
+  right: var(--min--spacing);
+  top: var(--min--spacing);
+
+  border-width: 1px 1px 0px 0px;
+  border-style: solid;
+  border-color: var(--accent-color);
+}
+
+.corners::after {
+  content: "";
+  position: absolute;
+  inline-size: 25.04px;
+  block-size: 25px;
+  left: var(--min--spacing);
+  bottom: var(--min--spacing);
+
+  border-width: 0px 0px 1px 1px;
+  border-style: solid;
+  border-color: var(--accent-color);
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11.5px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  color: var(--accent-color);
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  padding: 0 13px 1.3px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  text-decoration: underline;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+}
+
+.header__title {
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+
+  color: var(--dop-accent-color);
+
+  text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+.camera-feed {
+  position: absolute;
+  color: var(--accent-color);
+  top: var(--min--spacing);
+  right: calc(var(--min--spacing) + 9px);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.camera-feed::after {
+  content: "";
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 100%;
+  background: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.3;
+  align-self: flex-start;
+  /* line height / font size = относительный line-height */
+  /* 23 / 18 = 1.27777777778 */
+}
+
+.header__text-block {
+  align-self: center;
+}
+
+.content {
+  padding: 40px var(--min--spacing);
+  display: grid;
+  gap: 50px;
+}
+
+.content__section {
+  display: grid;
+  gap: 20px;
+}
+
+.text-card {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  display: grid;
+  gap: 10px;
+}
+
+.content__section__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.3;
+
+  color: var(--accent-color);
+}
+
+.text-card__subtitle {
+  font-weight: normal;
+}
+
+.link {
+  text-shadow: 2px 1px 0px var(--accent-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.concentration-methods-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.concentration-methods-images img {
+  inline-size: 100%;
+}
+
+.footer {
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  padding: var(--min--spacing);
+  position: relative;
+}
+
+.footer__title {
+  align-self: center;
+  justify-self: center;
+  font-weight: bold;
+
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+
+  color: var(--dop-accent-color);
+
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+@media (width >= 765px) {
+  :root {
+    --min--spacing: 20px;
+  }
+
+  .header {
+    padding-left: 0;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    grid-column: 1 /-1;
+  }
+
+  .header__text-block {
+    grid-column: 2;
+    justify-self: start;
+    margin-inline-start: 10px;
+  }
+
+  .content {
+    padding: 60px var(--min--spacing);
+    gap: 80px;
+  }
+
+  .content__section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .text-card {
+    grid-column: 2;
+  }
+
+  .distractions__text-card {
+    grid-column: 1 / -1;
+  }
+
+  .concentration-methods__title {
+    grid-row: 1 / 3;
+  }
+
+  .concentration-methods-images {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, min-content);
+  }
+
+  .concentration-methods-images__title {
+    grid-column: 1/-1;
+  }
+
+  .concentration-methods-images img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .concentration-methods-images img:nth-of-type(1) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  .concentration-methods-images img:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: 2 / span 2;
+  }
+
+  .concentration-methods-images img:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: 3 / span 2;
+  }
+
+  .concentration-methods-images img:nth-of-type(5) {
+    grid-column: 2 / span 2;
+    grid-row: 4;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+    grid-column: 1/-1;
+    margin-inline-start: 20px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .content__section {
+    gap: 20px 10px;
+  }
+
+  .distractions {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .distractions__text-card {
+    grid-column: auto;
+    grid-row: 2;
+    align-content: flex-start;
+  }
+
+  .concentration-methods-images {
+    gap: 20px;
+  }
 }
