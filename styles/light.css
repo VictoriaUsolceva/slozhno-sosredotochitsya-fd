@@ -16,7 +16,7 @@
   --main-font: "IBM Plex mono";
   --accent-color: rgba(255, 141, 203, 1);
 
-  --button-hover-color: rgba(255, 141, 203, 0.4);
+  --button-hover-color: rgba(50, 49, 45, 0.4);
   --dop-accent-color: rgba(255, 194, 230, 1);
 }
 
@@ -32,6 +32,18 @@
   display: none;
 }
 
+:root.theme-light .header__theme-menu-button {
+  color: var(--text-color);
+}
+
+:root.theme-light .corners::before {
+  border-color: var(--text-color);
+}
+
+:root.theme-light .corners::after {
+  border-color: var(--text-color);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     /* Дублируем только те же переменные, что и выше */
@@ -40,19 +52,31 @@
     --text-color: rgba(53, 52, 48, 1);
     --main-font: "IBM Plex mono";
     --accent-color: rgba(255, 141, 203, 1);
-    --button-hover-color: rgba(255, 141, 203, 0.4);
+    --button-hover-color: rgba(50, 49, 45, 0.4);
     --dop-accent-color: rgba(255, 194, 230, 1);
   }
 
-  .title-decor {
+  .theme-auto .title-decor {
     color: var(--text-color);
   }
 
-  .content__section__title {
+  .theme-auto .content__section__title {
     color: var(--text-color);
   }
 
-  .camera-feed {
+  .theme-auto .camera-feed {
     display: none;
+  }
+
+  .theme-auto .header__theme-menu-button {
+    color: var(--text-color);
+  }
+
+  .theme-auto .corners::before {
+    border-color: var(--text-color);
+  }
+
+  .theme-auto .corners::after {
+    border-color: var(--text-color);
   }
 }
