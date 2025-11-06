@@ -61,7 +61,6 @@
 .header__theme-menu-button {
   margin: 0;
   border: none;
-  padding: 0;
   padding: 0 13px 1.3px;
   color: var(--accent-color);
   font-weight: normal;
