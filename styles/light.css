@@ -2,35 +2,17 @@
   --bg-cover-image: url(../images/cover-image-light.png);
   --bg-color: rgba(255, 241, 247, 1);
   --text-color: rgba(53, 52, 48, 1);
-  --main-font: "IBM Plex mono";
   --accent-color: rgba(255, 141, 203, 1);
-
-  --button-hover-color: rgba(50, 49, 45, 0.4);
   --dop-accent-color: rgba(255, 194, 230, 1);
-}
 
-:root.theme-light .title-decor {
-  color: var(--text-color);
-}
+  /* Используется для заголовков цвет которых отличается в разных темах */
+  --contrast-accent-color: 53, 52, 48;
 
-:root.theme-light .content__section__title {
-  color: var(--text-color);
-}
+  /* Используется для создание полупрозрачности у кнопок в состоянии hover  */
+  --dark-title-color: rgba(53, 52, 48, 1);
 
-:root.theme-light .camera-feed {
-  display: none;
-}
-
-:root.theme-light .header__theme-menu-button {
-  color: var(--text-color);
-}
-
-:root.theme-light .corners::before {
-  border-color: var(--text-color);
-}
-
-:root.theme-light .corners::after {
-  border-color: var(--text-color);
+  /* Используется для показа и скрытия значка камеры в разных темах */
+  --camera: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -38,33 +20,16 @@
     --bg-cover-image: url(../images/cover-image-light.png);
     --bg-color: rgba(255, 241, 247, 1);
     --text-color: rgba(53, 52, 48, 1);
-    --main-font: "IBM Plex mono";
     --accent-color: rgba(255, 141, 203, 1);
-    --button-hover-color: rgba(50, 49, 45, 0.4);
     --dop-accent-color: rgba(255, 194, 230, 1);
-  }
 
-  .theme-auto .title-decor {
-    color: var(--text-color);
-  }
+    /* Используется для показа и скрытия значка камеры в разных темах */
+    --camera: none;
 
-  .theme-auto .content__section__title {
-    color: var(--text-color);
-  }
+    /* Используется для создание полупрозрачности у кнопок в состоянии hover  */
+    --contrast-accent-color: 53, 52, 48;
 
-  .theme-auto .camera-feed {
-    display: none;
-  }
-
-  .theme-auto .header__theme-menu-button {
-    color: var(--text-color);
-  }
-
-  .theme-auto .corners::before {
-    border-color: var(--text-color);
-  }
-
-  .theme-auto .corners::after {
-    border-color: var(--text-color);
+    /* Используется для заголовков цвет которых отличается в разных темах */
+    --dark-title-color: rgba(53, 52, 48, 1);
   }
 }

@@ -2,9 +2,15 @@
   --bg-cover-image: url(../images/cover-image-dark.png);
   --bg-color: rgba(0, 0, 40, 1);
   --text-color: rgba(241, 178, 206, 1);
-  --main-font: "IBM Plex mono";
   --accent-color: rgba(255, 0, 112, 1);
-
-  --button-hover-color: rgba(255, 0, 112, 0.4);
   --dop-accent-color: rgba(219, 0, 255, 1);
+
+  /* Используется для создание полупрозрачности у кнопок в состоянии hover  */
+  --contrast-accent-color: 255, 0, 112; 
+
+  /* Используется для заголовков цвет которых отличается в разных темах */
+  --dark-title-color: rgba(0, 0, 40, 1);
+  
+  /* Используется для показа и скрытия значка камеры в разных темах */
+  --camera: flex;
 }
