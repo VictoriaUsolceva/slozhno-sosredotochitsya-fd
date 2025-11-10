@@ -144,6 +144,11 @@
   gap: 20px;
 }
 
+.section-content {
+  display: grid;
+  gap: 20px;
+}
+
 .section-list {
   display: grid;
   gap: 20px;
